@@ -2,7 +2,7 @@
 C++ Package Manager 1001
 This package manager is for windows and operates basically with one .cmd file in you system PATH. With this file you can install git repo's as library packages to you system and use these packages in your personal projects.
 
-You can only use git rop's containing a build.cmd that will build and install to ``%userprofile%\.cpppm\install``. To install SDL2 library, open a commandprompt and run the following command:
+You can only use git repo's containing a build.cmd that will build and install to ``%userprofile%\.cpppm\install``. To install SDL2 library, open a commandprompt and run the following command:
 
 ```
 cpppm https://github.com/12games/sdl2.git
