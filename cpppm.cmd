@@ -6,7 +6,13 @@ if not exist %CPPPM_ROOT% mkdir %CPPPM_ROOT%
 set "CPPPM_INSTALL_ROOT=%CPPPM_ROOT%\install"
 if not exist %CPPPM_INSTALL_ROOT% mkdir %CPPPM_INSTALL_ROOT%
 
-SET map=%1
+if "%1"=="install" goto install
+if "%1"=="update" goto update
+
+goto invalidcommand
+
+:install
+SET map=%2
 set str=%map:http://=%
 set str=%str:https://=%
 set str=%str:/=_%
@@ -41,5 +47,23 @@ pushd %cd%
 cd %CPPPM_PACKAGE_ROOT%
 call build.cmd %CPPPM_INSTALL_ROOT% "MinGW Makefiles"
 popd
+
+goto exit
+
+:update
+
+echo The update command is not yet implemented...
+
+goto exit
+
+:invalidcommand
+echo No valid command is given. Usage:
+echo.
+echo    cpppm [command] [package url]
+echo.
+echo Possible commands are:
+echo   * install
+echo   * update
+echo.
 
 :exit
