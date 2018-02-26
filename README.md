@@ -5,7 +5,7 @@ This package manager is for windows and operates basically with one .cmd file in
 You can only use git repo's containing a build.cmd that will build and install to ``%userprofile%\.cpppm\install``. To install SDL2 library, open a commandprompt and run the following command:
 
 ```
-cpppm https://github.com/12games/sdl2.git
+cpppm install https://github.com/12games/sdl2.git
 ```
 
 A project using cpppm should add this install directory to its CMAKE_PREFIX_PATH so all installed projects can be found with find_pacakge(). This is what you should add to you projects CMakeLists.txt:
