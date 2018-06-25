@@ -13,6 +13,5 @@ A project using cpppm should add this install directory to its CMAKE_PREFIX_PATH
 ```
 ...
 list(APPEND CMAKE_PREFIX_PATH "$ENV{userprofile}/.cpppm/install")
-list(APPEND CMAKE_MODULE_PATH ${CMAKE_PREFIX_PATH}/cmake)
 ...
 ```
