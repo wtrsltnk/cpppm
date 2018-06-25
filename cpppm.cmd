@@ -9,7 +9,6 @@ if not exist %CPPPM_INSTALL_ROOT% mkdir %CPPPM_INSTALL_ROOT%
 set COMPILER_TOOLSET="MinGW Makefiles"
 
 if "%1"=="install" goto install
-if "%1"=="update" goto update
 
 goto invalidcommand
 
@@ -38,6 +37,9 @@ if exist %CPPPM_PACKAGE_ROOT% (
     git clone --recursive -- %2 %CPPPM_PACKAGE_ROOT%
 )
 
+goto build
+
+:build
 pushd %cd%
 
 cd %CPPPM_PACKAGE_ROOT%
@@ -59,12 +61,7 @@ if not exist "build.cmd" (
 )
 popd
 
-goto exit
-
-:update
-
-echo The update command is not yet implemented...
-
+echo Done building
 goto exit
 
 :invalidcommand
@@ -74,7 +71,6 @@ echo    cpppm [command] [package url]
 echo.
 echo Possible commands are:
 echo   * install
-echo   * update
 echo.
 
 :exit
